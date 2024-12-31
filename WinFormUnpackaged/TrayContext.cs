@@ -24,9 +24,8 @@
             if (wns.IsSupported())
             {
                 var channel = await wns.RequestChannelAsync();
-                trayIcon.BalloonTipText = channel.Uri.ToString();
+                trayIcon.BalloonTipText = $"Channel url copied to clipboard. Expiry in {channel.ExpirationTime}";
                 trayIcon.ShowBalloonTip(2000);
-                Console.Write(channel.Uri.ToString());
             }
             else
             {
